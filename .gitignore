@@ -1,0 +1,9 @@
+CARLA
+env
+assets/scenic
+venv
+.venv
+.env
+.mypy_cache
+assets/record/*
+**/__pycache__
