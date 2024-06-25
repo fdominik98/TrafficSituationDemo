@@ -26,7 +26,7 @@ class CellFrame:
         self.abs_pos = abs_pos
         self.is_intermediate = parser.is_intermediate(self.cell)
         
-        image_size = (cell_size[0] + 1, cell_size[1])
+        image_size = (cell_size[0] + 1, cell_size[1] + 1)
         self.road_image = pygame.transform.scale(self.road_image, image_size)
         self.road_line_image = pygame.transform.scale(self.road_line_image, image_size)
         

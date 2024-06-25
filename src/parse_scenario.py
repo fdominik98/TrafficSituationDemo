@@ -73,7 +73,7 @@ def parse_scenario(gen):
                 
         if start_time is not None and (time.time() - start_time) >= 0.5:
             playback = True
-        if playback and (time.time() - start_time) >= 0.35:
+        if playback and (time.time() - start_time) >= 0.5:
             frame_counter += refresh_frame_counter(last_event, frames[sol_counter], frame_counter)
             frames[sol_counter][frame_counter].draw(screen, frame_counter, len(frames[sol_counter]), sol_counter, sol_num)
             pygame.display.flip()
