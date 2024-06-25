@@ -5,40 +5,32 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "main",
+            "name": "DISPLAY",
             "type": "debugpy",
             "request": "launch",
-            "program": "src/main.py",
+            "program": "src/display_scenarios.py",
             "console": "integratedTerminal"
         },
         {
-            "name": "Scenic-Carla solution0",
+            "name": "GENERATE",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/generate_scenic.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Scenic-Newtonian solution9",
             "type": "debugpy",
             "request": "launch",
             "module": "scenic",
-            "args": ["assets/scenic/carla/solution0.scenic", "--simulate"],
+            "args": ["assets/scenic/newtonian/solution9.scenic", "--simulate"],
             "console": "integratedTerminal"
         },
         {
-            "name": "Scenic-Newtonian solution0",
+            "name": "RUN SCENARIOS",
             "type": "debugpy",
             "request": "launch",
-            "module": "scenic",
-            "args": ["assets/scenic/newtonian/solution0.scenic", "--simulate"],
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "RUN_CARLA",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "run_carla.py",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "TERMINATE_CARLA",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "terminate_carla.py",
+            "program": "run_scenario.py",
             "console": "integratedTerminal"
         },
     ]

@@ -18,11 +18,11 @@ behavior PartialLaneChangeBehavior(target_point, is_oppositeTraffic=False, targe
             traj_endpoint = current_lane.rightEdge[-1]
     else:
         if self.position[1] < target_point[1]:
-            traj_centerline = [current_lane.rightEdge]
-            traj_endpoint = current_lane.rightEdge[0]
-        else:
             traj_centerline = [current_lane.leftEdge]
             traj_endpoint = current_lane.leftEdge[0]
+        else:
+            traj_centerline = [current_lane.rightEdge]
+            traj_endpoint = current_lane.rightEdge[0]
 
 
     brakeIntensity = 1.0

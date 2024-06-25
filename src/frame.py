@@ -56,6 +56,9 @@ class CarFrame:
         self.is_ego = self.car in self.parser.ego_cars
         self.is_forward = parser.is_forward(self.car)
         self.color = DotToFrameParser.get_car_color(self.car)
+        self.name = 'ego' if self.is_ego else f'car{car}' 
+        self.blueprint = 'vehicle.mini.cooper_s' if self.is_ego else 'vehicle.nissan.micra'
+        self.blueprint = 'vehicle.mini.cooper_s'
         
         if self.is_ego:
             self.image = self.ego_image
@@ -103,6 +106,7 @@ class Frame():
                 if cell in parser.car_cells:
                     car_frames.add(CarFrame(parser, parser.car_cells[cell], cell_frame, car_size))
             cell_pos = (0.0, cell_frame.pos[1] + cell_frame.size[1])
+        self.road_length = len(parser.cells[0])
             
         pygame.draw.line(screen, ORANGE, (0, MARGIN_HEIGHT), (screen.get_width(), MARGIN_HEIGHT), 7)  
         pygame.draw.line(screen, ORANGE, (0, screen_height + MARGIN_HEIGHT),

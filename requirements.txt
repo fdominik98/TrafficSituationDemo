@@ -29,3 +29,4 @@ rv-ltl==0.1.0
 scenic
 carla
 psutil
+imageio[ffmpeg]

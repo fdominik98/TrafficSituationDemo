@@ -1,6 +1,7 @@
 CARLA
 env
-assets/scenic
+assets/scenic/carla/*
+assets/scenic/newtonian/*
 venv
 .venv
 .env

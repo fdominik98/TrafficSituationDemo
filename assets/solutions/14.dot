@@ -9,17 +9,17 @@ edge [
 	labeldistance=3
 	fontname="Helvetica"
 ]
-189 -> 2 [
+189 -> 4 [
 	style=solid
 	color=black
 	fontcolor=black
 	label="IntendedLane"]
-190 -> 2 [
+190 -> 4 [
 	style=solid
 	color=black
 	fontcolor=black
 	label="IntendedLane"]
-191 -> 4 [
+191 -> 2 [
 	style=solid
 	color=black
 	fontcolor=black
@@ -29,26 +29,86 @@ edge [
 	color=black
 	fontcolor=black
 	label="IntendedLane"]
-189 -> 96 [
+1 -> 0 [
 	style=solid
 	color=black
 	fontcolor=black
-	label="OnCell"]
-190 -> 56 [
+	label="NeighboringLanes"]
+0 -> 1 [
 	style=solid
 	color=black
 	fontcolor=black
-	label="OnCell"]
-191 -> 103 [
+	label="NeighboringLanes"]
+2 -> 1 [
 	style=solid
 	color=black
 	fontcolor=black
-	label="OnCell"]
-192 -> 136 [
+	label="NeighboringLanes"]
+1 -> 2 [
 	style=solid
 	color=black
 	fontcolor=black
-	label="OnCell"]
+	label="NeighboringLanes"]
+3 -> 2 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
+2 -> 3 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
+4 -> 3 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
+3 -> 4 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
+5 -> 4 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
+4 -> 5 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
+6 -> 5 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
+5 -> 6 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
+7 -> 6 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
+6 -> 7 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
+8 -> 7 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
+7 -> 8 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="NeighboringLanes"]
 9 -> 0 [
 	style=solid
 	color=black
@@ -949,86 +1009,31 @@ edge [
 	color=black
 	fontcolor=black
 	label="ContainingLane"]
-1 -> 0 [
+189 -> 190 [
 	style=solid
 	color=black
 	fontcolor=black
-	label="NeighboringLanes"]
-0 -> 1 [
+	label="MonitorState: EgoIsAtOppositeLane[ego, car1]"]
+189 -> 141 [
 	style=solid
 	color=black
 	fontcolor=black
-	label="NeighboringLanes"]
-2 -> 1 [
+	label="OnCell"]
+190 -> 102 [
 	style=solid
 	color=black
 	fontcolor=black
-	label="NeighboringLanes"]
-1 -> 2 [
+	label="OnCell"]
+191 -> 55 [
 	style=solid
 	color=black
 	fontcolor=black
-	label="NeighboringLanes"]
-3 -> 2 [
+	label="OnCell"]
+192 -> 134 [
 	style=solid
 	color=black
 	fontcolor=black
-	label="NeighboringLanes"]
-2 -> 3 [
-	style=solid
-	color=black
-	fontcolor=black
-	label="NeighboringLanes"]
-4 -> 3 [
-	style=solid
-	color=black
-	fontcolor=black
-	label="NeighboringLanes"]
-3 -> 4 [
-	style=solid
-	color=black
-	fontcolor=black
-	label="NeighboringLanes"]
-5 -> 4 [
-	style=solid
-	color=black
-	fontcolor=black
-	label="NeighboringLanes"]
-4 -> 5 [
-	style=solid
-	color=black
-	fontcolor=black
-	label="NeighboringLanes"]
-6 -> 5 [
-	style=solid
-	color=black
-	fontcolor=black
-	label="NeighboringLanes"]
-5 -> 6 [
-	style=solid
-	color=black
-	fontcolor=black
-	label="NeighboringLanes"]
-7 -> 6 [
-	style=solid
-	color=black
-	fontcolor=black
-	label="NeighboringLanes"]
-6 -> 7 [
-	style=solid
-	color=black
-	fontcolor=black
-	label="NeighboringLanes"]
-8 -> 7 [
-	style=solid
-	color=black
-	fontcolor=black
-	label="NeighboringLanes"]
-7 -> 8 [
-	style=solid
-	color=black
-	fontcolor=black
-	label="NeighboringLanes"]
+	label="OnCell"]
 0 [
 	fillcolor="#c6fa9e"
 	label=<<TABLE CELLSPACING="0" BORDER="2" CELLBORDER="0" CELLPADDING="4" STYLE="ROUNDED">
@@ -2381,21 +2386,28 @@ edge [
 		<TR><TD><FONT COLOR="black">Car</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">3</FONT></TD></TR>
 		</TABLE>>
 ]
-relation_189_190_191 [
-	fillcolor="#f6fc9e"
-	label=<<TABLE CELLSPACING="0" BORDER="2" CELLBORDER="0" CELLPADDING="4" STYLE="ROUNDED">
-		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">relation_189_190_191</TD></TR>
-		<TR><TD><FONT COLOR="black">MonitorState: ApproachingCarIsComing[ego, car1, car2]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock BehindCarClock=0, Clock AcceptClock=0, Clock AtOppositeLaneClock=7}</FONT></TD></TR>
-		</TABLE>>
-]
 variables [
 	fillcolor="#bfc2c3"
 	label=<<TABLE CELLSPACING="0" BORDER="2" CELLBORDER="0" CELLPADDING="4" STYLE="ROUNDED">
 		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">variables</TD></TR>
-		<TR><TD><FONT COLOR="black">Fitness</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">0.2</FONT></TD></TR>
-		<TR><TD><FONT COLOR="black">MonitorState: StartState[]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock BehindCarClock=0, Clock AcceptClock=0, Clock AtOppositeLaneClock=0}</FONT></TD></TR>
 		<TR><TD><FONT COLOR="black">NEXT_ID</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">193</FONT></TD></TR>
 		<TR><TD><FONT COLOR="black">Clock</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">8</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">MonitorState: StartState[]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock AtOppositeLaneClock=0, Clock AcceptClock=0, Clock BehindCarClock=0}</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">Fitness</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">4.997476274481387E-6</FONT></TD></TR>
+		</TABLE>>
+]
+relation_189_190_192 [
+	fillcolor="#a7df8f"
+	label=<<TABLE CELLSPACING="0" BORDER="2" CELLBORDER="0" CELLPADDING="4" STYLE="ROUNDED">
+		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">relation_189_190_192</TD></TR>
+		<TR><TD><FONT COLOR="black">MonitorState: EgoIsSwitchingToOwnLane[ego, car1, car2]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock AtOppositeLaneClock=6, Clock BehindCarClock=0, Clock AcceptClock=0}</FONT></TD></TR>
+		</TABLE>>
+]
+relation_189_190_191 [
+	fillcolor="#a7df8f"
+	label=<<TABLE CELLSPACING="0" BORDER="2" CELLBORDER="0" CELLPADDING="4" STYLE="ROUNDED">
+		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">relation_189_190_191</TD></TR>
+		<TR><TD><FONT COLOR="black">MonitorState: EgoIsSwitchingToOwnLane[ego, car1, car2]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock AtOppositeLaneClock=6, Clock BehindCarClock=0, Clock AcceptClock=0}</FONT></TD></TR>
 		</TABLE>>
 ]
 }

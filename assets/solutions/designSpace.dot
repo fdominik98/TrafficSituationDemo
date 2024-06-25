@@ -9,171 +9,75 @@ node[
 URL="./0.svg"]
 1 [label = "1 (ObjectiveValue1[value0=0.5])"
 URL="./1.svg"]
-0 -> 1 [label="0: MoveToNeighborRule, [189, 49, 49, 190, 51, 52, 191, 108, 107, 192, 132, 133]"]
-2 [label = "2 (ObjectiveValue1[value0=0.5])"
+0 -> 1 [label="0: MoveToNeighborRule, [189, 108, 107, 190, 106, 106, 191, 50, 50, 192, 130, 131]"]
+2 [label = "2 (ObjectiveValue1[value0=0.09090909090909091])"
 URL="./2.svg"]
-1 -> 2 [label="1: MoveToNeighborRule, [189, 49, 30, 190, 52, 52, 191, 107, 106, 192, 133, 134]"]
-3 [label = "3 (ObjectiveValue1[value0=0.5])"
+1 -> 2 [label="1: MoveToNeighborRule, [189, 107, 126, 190, 106, 105, 191, 50, 50, 192, 131, 131]"]
+3 [label = "3 (ObjectiveValue1[value0=0.09090909090909091])"
 URL="./3.svg"]
-2 -> 3 [label="2: MoveToNeighborRule, [189, 30, 51, 190, 52, 53, 191, 106, 106, 192, 134, 134]"]
-4 [label = "4 (ObjectiveValue1[value0=0.5])"
+2 -> 3 [label="2: MoveToNeighborRule, [189, 126, 125, 190, 105, 105, 191, 50, 51, 192, 131, 131]"]
+4 [label = "4 (ObjectiveValue1[value0=0.09090909090909091])"
 URL="./4.svg"]
-3 -> 4 [label="3: MoveToNeighborRule, [189, 51, 32, 190, 53, 54, 191, 106, 105, 192, 134, 134]"]
+3 -> 4 [label="3: MoveToNeighborRule, [189, 125, 124, 190, 105, 104, 191, 51, 51, 192, 131, 132]"]
 5 [label = "5 (ObjectiveValue1[value0=0.5])"
 URL="./5.svg"]
-4 -> 5 [label="4: MoveToNeighborRule, [189, 32, 53, 190, 54, 55, 191, 105, 105, 192, 134, 134]"]
-6 [label = "6 (ObjectiveValue1[value0=0.3333333333333333])"
+4 -> 5 [label="4: MoveToNeighborRule, [189, 124, 103, 190, 104, 104, 191, 51, 52, 192, 132, 132]"]
+6 [label = "6 (ObjectiveValue1[value0=0.5])"
 URL="./6.svg"]
-5 -> 6 [label="5: MoveToNeighborRule, [189, 53, 74, 190, 55, 56, 191, 105, 104, 192, 134, 135]"]
-7 [label = "7 (ObjectiveValue1[value0=0.3333333333333333])"
+2 -> 6 [label="5: MoveToNeighborRule, [189, 126, 105, 190, 105, 104, 191, 50, 50, 192, 131, 131]"]
+7 [label = "7 (ObjectiveValue1[value0=0.09090909090909091])"
 URL="./7.svg"]
-6 -> 7 [label="6: MoveToNeighborRule, [189, 74, 74, 190, 56, 57, 191, 104, 103, 192, 135, 135]"]
-8 [label = "8 (ObjectiveValue1[value0=0.5])"
+2 -> 7 [label="6: MoveToNeighborRule, [189, 126, 126, 190, 105, 105, 191, 50, 51, 192, 131, 131]"]
+8 [label = "8 (ObjectiveValue1[value0=0.009900990099009901])"
 URL="./8.svg"]
-7 -> 8 [label="7: MoveToNeighborRule, [189, 74, 55, 190, 57, 58, 191, 103, 102, 192, 135, 136]"]
-9 [label = "9 (ObjectiveValue1[value0=0.25])"
+7 -> 8 [label="7: MoveToNeighborRule, [189, 126, 145, 190, 105, 104, 191, 51, 52, 192, 131, 132]"]
+9 [label = "9 (ObjectiveValue1[value0=4.997251511668582E-5])"
 URL="./9.svg"]
-6 -> 9 [label="8: MoveToNeighborRule, [189, 74, 95, 190, 56, 56, 191, 104, 104, 192, 135, 136]"]
-10 [label = "10 (ObjectiveValue1[value0=0.3333333333333333])"
+8 -> 9 [label="8: MoveToNeighborRule, [189, 145, 124, 190, 104, 103, 191, 52, 53, 192, 132, 133]"]
+10 [label = "10 (ObjectiveValue1[value0=4.999725015124168E-6])"
 URL="./10.svg"]
-9 -> 10 [label="9: MoveToNeighborRule, [189, 95, 116, 190, 56, 56, 191, 104, 103, 192, 136, 136]"]
-11 [label = "11 (ObjectiveValue1[value0=0.3333333333333333])"
+9 -> 10 [label="9: MoveToNeighborRule, [189, 124, 123, 190, 103, 102, 191, 53, 54, 192, 133, 133]"]
+11 [label = "11 (ObjectiveValue1[value0=4.999725015124168E-6])"
 URL="./11.svg"]
-9 -> 11 [label="10: MoveToNeighborRule, [189, 95, 76, 190, 56, 57, 191, 104, 103, 192, 136, 137]"]
-12 [label = "12 (ObjectiveValue1[value0=0.3333333333333333])"
+10 -> 11 [label="10: MoveToNeighborRule, [189, 123, 122, 190, 102, 102, 191, 54, 55, 192, 133, 134]"]
+12 [label = "12 (ObjectiveValue1[value0=4.997476274481387E-6])"
 URL="./12.svg"]
-9 -> 12 [label="11: MoveToNeighborRule, [189, 95, 76, 190, 56, 57, 191, 104, 103, 192, 136, 136]"]
-13 [label = "13 (ObjectiveValue1[value0=0.3333333333333333])"
+11 -> 12 [label="11: MoveToNeighborRule, [189, 122, 141, 190, 102, 101, 191, 55, 55, 192, 134, 134]"]
+13 [label = "13 (ObjectiveValue1[value0=4.999750012499375E-5])"
 URL="./13.svg"]
-9 -> 13 [label="12: MoveToNeighborRule, [189, 95, 116, 190, 56, 56, 191, 104, 103, 192, 136, 137]"]
-14 [label = "14 (ObjectiveValue1[value0=0.2])"
+12 -> 13 [label="12: MoveToNeighborRule, [189, 141, 141, 190, 101, 101, 191, 55, 56, 192, 134, 134]"]
+14 [label = "14 (ObjectiveValue1[value0=4.997476274481387E-6])"
 URL="./14.svg"]
-9 -> 14 [label="13: MoveToNeighborRule, [189, 95, 96, 190, 56, 56, 191, 104, 103, 192, 136, 136]"]
-15 [label = "15 (ObjectiveValue1[value0=0.2])"
+11 -> 14 [label="13: MoveToNeighborRule, [189, 122, 141, 190, 102, 102, 191, 55, 55, 192, 134, 134]"]
+15 [label = "15 (ObjectiveValue1[value0=4.999750012499375E-5])"
 URL="./15.svg"]
-14 -> 15 [label="14: MoveToNeighborRule, [189, 96, 97, 190, 56, 57, 191, 103, 103, 192, 136, 136]"]
-16 [label = "16 (ObjectiveValue1[value0=0.2])"
+14 -> 15 [label="14: MoveToNeighborRule, [189, 141, 141, 190, 102, 102, 191, 55, 56, 192, 134, 135]"]
+16 [label = "16 (ObjectiveValue1[value0=4.999750012499375E-5])"
 URL="./16.svg"]
-15 -> 16 [label="15: MoveToNeighborRule, [189, 97, 97, 190, 57, 58, 191, 103, 103, 192, 136, 137]"]
-17 [label = "17 (ObjectiveValue1[value0=0.2])"
+12 -> 16 [label="15: MoveToNeighborRule, [189, 141, 140, 190, 101, 101, 191, 55, 56, 192, 134, 135]"]
+17 [label = "17 (ObjectiveValue1[value0=4.999750012499375E-5])"
 URL="./17.svg"]
-16 -> 17 [label="16: MoveToNeighborRule, [189, 97, 98, 190, 58, 58, 191, 103, 103, 192, 137, 138]"]
-18 [label = "18 (ObjectiveValue1[value0=0.2])"
+12 -> 17 [label="16: MoveToNeighborRule, [189, 141, 141, 190, 101, 100, 191, 55, 56, 192, 134, 134]"]
+18 [label = "18 (ObjectiveValue1[value0=4.999750012499375E-5])"
 URL="./18.svg"]
-17 -> 18 [label="17: MoveToNeighborRule, [189, 98, 79, 190, 58, 59, 191, 103, 103, 192, 138, 138]"]
-19 [label = "19 (ObjectiveValue1[value0=0.2])"
+12 -> 18 [label="17: MoveToNeighborRule, [189, 141, 141, 190, 101, 100, 191, 55, 56, 192, 134, 135]"]
+19 [label = "19 (ObjectiveValue1[value0=4.997251511668582E-5])"
 URL="./19.svg"]
-18 -> 19 [label="18: MoveToNeighborRule, [189, 79, 80, 190, 59, 60, 191, 103, 103, 192, 138, 139]"]
-20 [label = "20 (ObjectiveValue1[value0=0.14285714285714285])"
+12 -> 19 [label="18: MoveToNeighborRule, [189, 141, 120, 190, 101, 100, 191, 55, 55, 192, 134, 134]"]
+20 [label = "20 (ObjectiveValue1[value0=2.3808900243088873E-6])"
 URL="./20.svg"]
-19 -> 20 [label="19: MoveToNeighborRule, [189, 80, 101, 190, 60, 61, 191, 103, 103, 192, 139, 139]"]
-21 [label = "21 (ObjectiveValue1[value0=0.14285714285714285])"
+12 -> 20 [label="19: MoveToNeighborRule, [189, 141, 120, 190, 101, 101, 191, 55, 55, 192, 134, 135]"]
+21 [label = "21 (ObjectiveValue1[value0=2.3809410431378896E-6])"
 URL="./21.svg"]
-20 -> 21 [label="20: MoveToNeighborRule, [189, 101, 122, 190, 61, 61, 191, 103, 103, 192, 139, 139]"]
-22 [label = "22 (ObjectiveValue1[value0=0.14285714285714285])"
+20 -> 21 [label="20: MoveToNeighborRule, [189, 120, 99, 190, 101, 101, 191, 55, 55, 192, 135, 135]"]
+22 [label = "22 (ObjectiveValue1[value0=2.3809410431378896E-6])"
 URL="./22.svg"]
-21 -> 22 [label="21: MoveToNeighborRule, [189, 122, 122, 190, 61, 61, 191, 103, 103, 192, 139, 140]"]
-23 [label = "23 (ObjectiveValue1[value0=0.14285714285714285])"
+20 -> 22 [label="21: MoveToNeighborRule, [189, 120, 99, 190, 101, 101, 191, 55, 56, 192, 135, 135]"]
+23 [label = "23 (ObjectiveValue1[value0=1.666636111671286E-6])"
 URL="./23.svg"]
-22 -> 23 [label="22: MoveToNeighborRule, [189, 122, 122, 190, 61, 62, 191, 103, 103, 192, 140, 140]"]
-24 [label = "24 (ObjectiveValue1[value0=0.14285714285714285])"
+20 -> 23 [label="22: MoveToNeighborRule, [189, 120, 119, 190, 101, 101, 191, 55, 55, 192, 135, 136]"]
+24 [label = "24 (ObjectiveValue1[value0=4.166663194447338E-7])"
 URL="./24.svg"]
-23 -> 24 [label="23: MoveToNeighborRule, [189, 122, 103, 190, 62, 62, 191, 103, 102, 192, 140, 140]"]
-25 [label = "25 (ObjectiveValue1[value0=0.14285714285714285])"
-URL="./25.svg"]
-24 -> 25 [label="24: MoveToNeighborRule, [189, 103, 103, 190, 62, 63, 191, 102, 101, 192, 140, 141]"]
-26 [label = "26 (ObjectiveValue1[value0=0.125])"
-URL="./26.svg"]
-25 -> 26 [label="25: MoveToNeighborRule, [189, 103, 84, 190, 63, 64, 191, 101, 101, 192, 141, 142]"]
-27 [label = "27 (ObjectiveValue1[value0=0.125])"
-URL="./27.svg"]
-26 -> 27 [label="26: MoveToNeighborRule, [189, 84, 85, 190, 64, 64, 191, 101, 100, 192, 142, 143]"]
-28 [label = "28 (ObjectiveValue1[value0=0.125])"
-URL="./28.svg"]
-27 -> 28 [label="27: MoveToNeighborRule, [189, 85, 86, 190, 64, 64, 191, 100, 100, 192, 143, 143]"]
-29 [label = "29 (ObjectiveValue1[value0=0.09090909090909091])"
-URL="./29.svg"]
-29 [peripheries = 2]
-28 -> 29 [label="28: MoveToNeighborRule, [189, 86, 67, 190, 64, 65, 191, 100, 100, 192, 143, 144]"]
-30 [label = "30 (ObjectiveValue1[value0=0.09090909090909091])"
-URL="./30.svg"]
-30 [peripheries = 2]
-29 -> 30 [label="29: MoveToNeighborRule, [189, 67, 68, 190, 65, 66, 191, 100, 99, 192, 144, 144]"]
-31 [label = "31 (ObjectiveValue1[value0=0.09090909090909091])"
-URL="./31.svg"]
-31 [peripheries = 2]
-30 -> 31 [label="30: MoveToNeighborRule, [189, 68, 68, 190, 66, 67, 191, 99, 99, 192, 144, 145]"]
-32 [label = "32 (ObjectiveValue1[value0=1.0])"
-URL="./32.svg"]
-31 -> 32 [label="31: MoveToNeighborRule, [189, 68, 68, 190, 67, 67, 191, 99, 98, 192, 145, 146]"]
-33 [label = "33 (ObjectiveValue1[value0=0.09090909090909091])"
-URL="./33.svg"]
-33 [peripheries = 2]
-29 -> 33 [label="32: MoveToNeighborRule, [189, 67, 67, 190, 65, 65, 191, 100, 100, 192, 144, 144]"]
-34 [label = "34 (ObjectiveValue1[value0=0.09090909090909091])"
-URL="./34.svg"]
-34 [peripheries = 2]
-33 -> 34 [label="33: MoveToNeighborRule, [189, 67, 48, 190, 65, 65, 191, 100, 99, 192, 144, 145]"]
-35 [label = "35 (ObjectiveValue1[value0=1.0])"
-URL="./35.svg"]
-34 -> 35 [label="34: MoveToNeighborRule, [189, 48, 48, 190, 65, 66, 191, 99, 99, 192, 145, 146]"]
-36 [label = "36 (ObjectiveValue1[value0=0.2])"
-URL="./36.svg"]
-9 -> 36 [label="35: MoveToNeighborRule, [189, 95, 95, 190, 56, 56, 191, 104, 104, 192, 136, 136]"]
-37 [label = "37 (ObjectiveValue1[value0=0.2])"
-URL="./37.svg"]
-36 -> 37 [label="36: MoveToNeighborRule, [189, 95, 95, 190, 56, 57, 191, 104, 104, 192, 136, 137]"]
-38 [label = "38 (ObjectiveValue1[value0=0.2])"
-URL="./38.svg"]
-37 -> 38 [label="37: MoveToNeighborRule, [189, 95, 76, 190, 57, 58, 191, 104, 103, 192, 137, 137]"]
-39 [label = "39 (ObjectiveValue1[value0=0.2])"
-URL="./39.svg"]
-38 -> 39 [label="38: MoveToNeighborRule, [189, 76, 77, 190, 58, 59, 191, 103, 103, 192, 137, 137]"]
-40 [label = "40 (ObjectiveValue1[value0=0.16666666666666666])"
-URL="./40.svg"]
-39 -> 40 [label="39: MoveToNeighborRule, [189, 77, 58, 190, 59, 59, 191, 103, 102, 192, 137, 137]"]
-41 [label = "41 (ObjectiveValue1[value0=0.16666666666666666])"
-URL="./41.svg"]
-40 -> 41 [label="40: MoveToNeighborRule, [189, 58, 58, 190, 59, 60, 191, 102, 101, 192, 137, 137]"]
-42 [label = "42 (ObjectiveValue1[value0=0.14285714285714285])"
-URL="./42.svg"]
-41 -> 42 [label="41: MoveToNeighborRule, [189, 58, 79, 190, 60, 60, 191, 101, 100, 192, 137, 138]"]
-43 [label = "43 (ObjectiveValue1[value0=0.14285714285714285])"
-URL="./43.svg"]
-42 -> 43 [label="42: MoveToNeighborRule, [189, 79, 79, 190, 60, 61, 191, 100, 99, 192, 138, 138]"]
-44 [label = "44 (ObjectiveValue1[value0=0.1111111111111111])"
-URL="./44.svg"]
-43 -> 44 [label="43: MoveToNeighborRule, [189, 79, 80, 190, 61, 61, 191, 99, 98, 192, 138, 138]"]
-45 [label = "45 (ObjectiveValue1[value0=0.1])"
-URL="./45.svg"]
-44 -> 45 [label="44: MoveToNeighborRule, [189, 80, 101, 190, 61, 61, 191, 98, 98, 192, 138, 139]"]
-46 [label = "46 (ObjectiveValue1[value0=0.1])"
-URL="./46.svg"]
-45 -> 46 [label="45: MoveToNeighborRule, [189, 101, 102, 190, 61, 62, 191, 98, 98, 192, 139, 139]"]
-47 [label = "47 (ObjectiveValue1[value0=0.1])"
-URL="./47.svg"]
-46 -> 47 [label="46: MoveToNeighborRule, [189, 102, 83, 190, 62, 63, 191, 98, 98, 192, 139, 140]"]
-48 [label = "48 (ObjectiveValue1[value0=0.08333333333333333])"
-URL="./48.svg"]
-48 [peripheries = 2]
-47 -> 48 [label="47: MoveToNeighborRule, [189, 83, 64, 190, 63, 63, 191, 98, 98, 192, 140, 140]"]
-49 [label = "49 (ObjectiveValue1[value0=0.08333333333333333])"
-URL="./49.svg"]
-49 [peripheries = 2]
-48 -> 49 [label="48: MoveToNeighborRule, [189, 64, 45, 190, 63, 64, 191, 98, 97, 192, 140, 141]"]
-50 [label = "50 (ObjectiveValue1[value0=0.08333333333333333])"
-URL="./50.svg"]
-50 [peripheries = 2]
-49 -> 50 [label="49: MoveToNeighborRule, [189, 45, 45, 190, 64, 65, 191, 97, 96, 192, 141, 142]"]
-51 [label = "51 (ObjectiveValue1[value0=0.5])"
-URL="./51.svg"]
-50 -> 51 [label="50: MoveToNeighborRule, [189, 45, 45, 190, 65, 66, 191, 96, 95, 192, 142, 143]"]
-52 [label = "52 (ObjectiveValue1[value0=0.07692307692307693])"
-URL="./52.svg"]
-52 [peripheries = 2]
-48 -> 52 [label="51: MoveToNeighborRule, [189, 64, 85, 190, 63, 63, 191, 98, 98, 192, 140, 141]"]
-53 [label = "53 (ObjectiveValue1[value0=0.07692307692307693])"
-URL="./53.svg"]
-53 [peripheries = 2]
-52 -> 53 [label="52: MoveToNeighborRule, [189, 85, 85, 190, 63, 63, 191, 98, 97, 192, 141, 142]"]
+24 [peripheries = 2]
+23 -> 24 [label="23: MoveToNeighborRule, [189, 119, 98, 190, 101, 101, 191, 55, 56, 192, 136, 137]"]
 }
