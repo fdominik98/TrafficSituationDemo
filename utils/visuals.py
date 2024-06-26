@@ -47,10 +47,10 @@ class HUD(object):
         self.dim = (width, height)
         font = pygame.font.Font(pygame.font.get_default_font(), 20)
         fonts = [x for x in pygame.font.get_fonts() if 'mono' in x]
-        default_font = 'ubuntumono'
+        default_font = 'cascadiamonoregular'
         mono = default_font if default_font in fonts else fonts[0]
         mono = pygame.font.match_font(mono)
-        self._font_mono = pygame.font.Font(mono, 14)
+        self._font_mono = pygame.font.Font(mono, 12)
         self._notifications = FadingText(font, (width, 40), (0, height - 40))
         self.server_fps = 0
         self.frame = 0
@@ -91,19 +91,19 @@ class HUD(object):
 
         self._info_text = [
             f'Solution: {self.solution_name}',
-            'Server:  % 16d FPS' % self.server_fps,
-            'Map:	 % 20s' % world.get_map().name,
-            'Simulation time: % 12s' % datetime.timedelta(seconds=int(self.simulation_time)),
+            'Server:% 16d FPS' % self.server_fps,
+            'Map:% 20s' % world.get_map().name,
+            'Simulation time:% 12s' % datetime.timedelta(seconds=int(self.simulation_time)),
             '',
-            'Number of vehicles: % 8d' % len(vehicles),
-            'Number of pedestrians: % 8d' % len(pedestrians),
+            'Number of vehicles:% 7d' % len(vehicles),
+            'Number of pedestrians:% 5d' % len(pedestrians),
             '',
-            'Ego: % 20s' % get_actor_display_name(ego.carlaActor, truncate=20),
+            'Ego:% 20s' % get_actor_display_name(ego.carlaActor, truncate=20),
             '',
-            'Speed:   % 15.0f m/s' % math.sqrt(v.x ** 2 + v.y ** 2 + v.z ** 2),
+            'Speed:% 15.0f m/s' % math.sqrt(v.x ** 2 + v.y ** 2 + v.z ** 2),
             u'Heading:% 16.0f\N{DEGREE SIGN} % 2s' % (t.rotation.yaw, heading),
             'Location:% 20s' % ('(% 5.3f, % 5.3f)' % (t.location.x, t.location.y)),
-            'Height:  % 18.0f m' % t.location.z,
+            'Height:% 18.0f m' % t.location.z,
         ]
 
         try:
@@ -260,7 +260,8 @@ class CameraManager(object):
         self._camera_transforms = [
             carla.Transform(carla.Location(x=-5.5, z=2.8), carla.Rotation(pitch=-15)),
             carla.Transform(carla.Location(x=1.6, z=1.7)),
-            carla.Transform(carla.Location(x=10.0, y=-15.0, z=35.0), carla.Rotation(pitch=-60, yaw=90.0, roll=0.0))]
+            carla.Transform(carla.Location(x=10.0, y=-15.0, z=35.0), carla.Rotation(pitch=-60, yaw=90.0, roll=0.0)),
+            carla.Transform(carla.Location(x=-7, z=5), carla.Rotation(pitch=-20))]
         self._transform_index = 1
         self._sensors = [
             ['sensor.camera.rgb', cc.Raw, 'Camera RGB'],

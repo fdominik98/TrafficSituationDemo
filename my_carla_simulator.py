@@ -113,7 +113,7 @@ class CarlaSimulation(DrivingSimulation):
         if self.render:
             self.displayDim = (width, height)
             self.displayClock = pygame.time.Clock()
-            self.camTransform = 2
+            self.camTransform = 3
             pygame.init()
             pygame.font.init()
             self.hud = visuals.HUD(*self.displayDim, self.solution_name)

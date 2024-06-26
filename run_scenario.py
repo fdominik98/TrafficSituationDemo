@@ -7,11 +7,13 @@ from manage_carla import run_carla, terminate_carla, get_files_in_folder
 terminate_carla()
 run_carla()
 
+scripts = 1
+
 current_directory = os.path.dirname(os.path.abspath(__file__))
 scenic_script_dir = f'{current_directory}/assets/scenic/carla'
 scenic_scripts = get_files_in_folder(scenic_script_dir)
 # Load the Scenic scenario
-scenario = scenic.scenarioFromFile(scenic_scripts[1][0])
+scenario = scenic.scenarioFromFile(scenic_scripts[0][0])
 
 # Connect to the CARLA simulator
 simulator = CarlaSimulator(carla_map = scenario.params['carla_map'],
@@ -24,6 +26,8 @@ simulator = CarlaSimulator(carla_map = scenario.params['carla_map'],
                         timestep = scenario.params['timestep'],
                         video_output_path = None if 'video_output_path' not in scenario.params else scenario.params['video_output_path'])
 
+if scripts != -1:
+    scenic_scripts = [scenic_scripts[scripts]]
 for i in range(5):
     for file_path, file in scenic_scripts:
         scenario = scenic.scenarioFromFile(file_path)

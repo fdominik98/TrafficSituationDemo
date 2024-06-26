@@ -61,9 +61,9 @@ class ScenicScriptGenerator():
     lane1=((128.5, -249.9), (599, -250),
             (128.5, -253.25), (599, -253.4)) 
     
-    lanelet_length = 12
+    lanelet_length = 7
     offset = lanelet_length * 2
-    SPEED = 30
+    SPEED = 10
     checkpoint_dist = 3
     
     lanes = [lane5, intermediate_lane54, lane4, intermediate_lane43, lane3, intermediate_lane32, lane2, intermediate_lane21, lane1]
@@ -169,7 +169,11 @@ class ScenicScriptGenerator():
         num_frames = len(car_frames)
         for i, (car_frame, time_step, last_time_step) in enumerate(car_frames):
             coords = self.point_to_coordinates(car_frame.cell_frame.abs_pos) 
-            magnitude = time_step * time_step    
+            if time_step <= 2:
+                magnitude = time_step
+            else:
+                magnitude = self.SPEED
+            magnitude = time_step
             target_speed = self.SPEED / (magnitude)
 
             if time_step > last_time_step:
