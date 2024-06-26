@@ -11,7 +11,7 @@ current_directory = os.path.dirname(os.path.abspath(__file__))
 scenic_script_dir = f'{current_directory}/assets/scenic/carla'
 scenic_scripts = get_files_in_folder(scenic_script_dir)
 # Load the Scenic scenario
-scenario = scenic.scenarioFromFile(scenic_scripts[0][0])
+scenario = scenic.scenarioFromFile(scenic_scripts[1][0])
 
 # Connect to the CARLA simulator
 simulator = CarlaSimulator(carla_map = scenario.params['carla_map'],

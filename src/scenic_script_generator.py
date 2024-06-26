@@ -61,7 +61,7 @@ class ScenicScriptGenerator():
     lane1=((128.5, -249.9), (599, -250),
             (128.5, -253.25), (599, -253.4)) 
     
-    lanelet_length = 7
+    lanelet_length = 12
     offset = lanelet_length * 2
     SPEED = 30
     checkpoint_dist = 3
@@ -168,11 +168,12 @@ class ScenicScriptGenerator():
         car_frames = self.car_frames[car]
         num_frames = len(car_frames)
         for i, (car_frame, time_step, last_time_step) in enumerate(car_frames):
-            coords = self.point_to_coordinates(car_frame.cell_frame.abs_pos)      
-            target_speed = self.SPEED / (time_step)
+            coords = self.point_to_coordinates(car_frame.cell_frame.abs_pos) 
+            magnitude = time_step * time_step    
+            target_speed = self.SPEED / (magnitude)
 
             if time_step > last_time_step:
-                self.car_behaviors[car].append(f'\ttake SetBrakeAction({1 - 1/time_step})')
+                self.car_behaviors[car].append(f'\ttake SetBrakeAction({1 - 1/magnitude})')
             
             if car_frame.cell_frame.is_intermediate:        
                 self.car_behaviors[car].append(f'\tdo PartialLaneChangeBehavior({coords[0]} @ {coords[1]}, is_oppositeTraffic=is_oppositeTraffic, target_speed={target_speed}) until (distance from self to {coords[0]} @ {coords[1]}) < {self.checkpoint_dist}')
