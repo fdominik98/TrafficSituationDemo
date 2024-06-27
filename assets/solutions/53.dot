@@ -349,22 +349,27 @@ edge [
 	color=black
 	fontcolor=black
 	label="ContainingLane"]
-63 -> 29 [
+63 -> 65 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="MonitorState: EgoIsBehindCar[ego, car1]"]
+63 -> 4 [
 	style=solid
 	color=black
 	fontcolor=black
 	label="OnCell"]
-64 -> 13 [
+64 -> 9 [
 	style=solid
 	color=black
 	fontcolor=black
 	label="OnCell"]
-65 -> 7 [
+65 -> 3 [
 	style=solid
 	color=black
 	fontcolor=black
 	label="OnCell"]
-66 -> 53 [
+66 -> 52 [
 	style=solid
 	color=black
 	fontcolor=black
@@ -840,11 +845,10 @@ edge [
 		</TABLE>>
 ]
 relation_63_64_66 [
-	fillcolor="#abe8bb"
+	fillcolor="#a0b9af"
 	label=<<TABLE CELLSPACING="0" BORDER="2" CELLBORDER="0" CELLPADDING="4" STYLE="ROUNDED">
 		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">relation_63_64_66</TD></TR>
-		<TR><TD><FONT COLOR="black">MonitorState: EgoIsSwitchingToOppositeLane[ego, car1, car2]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock BehindCarClock=12, Clock AtOppositeLaneClock=2, Clock AcceptClock=0}</FONT></TD></TR>
-		<TR><TD><FONT COLOR="black">MonitorState: EgoIsSwitchingToOwnLane[ego, car1, car2]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock BehindCarClock=0, Clock AtOppositeLaneClock=15, Clock AcceptClock=0}</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">MonitorState: AcceptState[ego, car1, car2]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock BehindCarClock=3, Clock AtOppositeLaneClock=17, Clock AcceptClock=27}</FONT></TD></TR>
 		</TABLE>>
 ]
 variables [
@@ -853,8 +857,9 @@ variables [
 		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">variables</TD></TR>
 		<TR><TD><FONT COLOR="black">MonitorState: StartState[]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock AcceptClock=0, Clock BehindCarClock=0, Clock AtOppositeLaneClock=0}</FONT></TD></TR>
 		<TR><TD><FONT COLOR="black">NEXT_ID</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">67</FONT></TD></TR>
-		<TR><TD><FONT COLOR="black">Clock</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">16</FONT></TD></TR>
-		<TR><TD><FONT COLOR="black">Fitness</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">0.014925373134328358</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">InAccept</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">1</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">Clock</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">27</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">Fitness</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">0.007692307692307693</FONT></TD></TR>
 		</TABLE>>
 ]
 }

@@ -349,7 +349,12 @@ edge [
 	color=black
 	fontcolor=black
 	label="ContainingLane"]
-63 -> 60 [
+63 -> 64 [
+	style=solid
+	color=black
+	fontcolor=black
+	label="MonitorState: EgoIsBehindCar[ego, car1]"]
+63 -> 20 [
 	style=solid
 	color=black
 	fontcolor=black
@@ -832,18 +837,18 @@ edge [
 		<TR><TD><FONT COLOR="black">Car</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">2</FONT></TD></TR>
 		</TABLE>>
 ]
+relation_63_64_66 [
+	fillcolor="#c2e9db"
+	label=<<TABLE CELLSPACING="0" BORDER="2" CELLBORDER="0" CELLPADDING="4" STYLE="ROUNDED">
+		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">relation_63_64_66</TD></TR>
+		<TR><TD><FONT COLOR="black">MonitorState: EgoIsBehindCar[ego, car1, car2]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock BehindCarClock=5, Clock AtOppositeLaneClock=0, Clock AcceptClock=0}</FONT></TD></TR>
+		</TABLE>>
+]
 66 [
 	fillcolor="#bfebd7"
 	label=<<TABLE CELLSPACING="0" BORDER="2" CELLBORDER="0" CELLPADDING="4" STYLE="ROUNDED">
 		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">66</TD></TR>
 		<TR><TD><FONT COLOR="black">Car</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">3</FONT></TD></TR>
-		</TABLE>>
-]
-relation_63_64_66 [
-	fillcolor="#adf2e2"
-	label=<<TABLE CELLSPACING="0" BORDER="2" CELLBORDER="0" CELLPADDING="4" STYLE="ROUNDED">
-		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">relation_63_64_66</TD></TR>
-		<TR><TD><FONT COLOR="black">MonitorState: EgoIsAtOppositeLane[ego, car1, car2]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock BehindCarClock=0, Clock AtOppositeLaneClock=2, Clock AcceptClock=0}</FONT></TD></TR>
 		</TABLE>>
 ]
 variables [
@@ -852,8 +857,8 @@ variables [
 		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">variables</TD></TR>
 		<TR><TD><FONT COLOR="black">MonitorState: StartState[]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock AcceptClock=0, Clock BehindCarClock=0, Clock AtOppositeLaneClock=0}</FONT></TD></TR>
 		<TR><TD><FONT COLOR="black">NEXT_ID</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">67</FONT></TD></TR>
-		<TR><TD><FONT COLOR="black">Clock</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">3</FONT></TD></TR>
-		<TR><TD><FONT COLOR="black">Fitness</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">0.2</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">Clock</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">6</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">Fitness</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">0.3333333333333333</FONT></TD></TR>
 		</TABLE>>
 ]
 }
