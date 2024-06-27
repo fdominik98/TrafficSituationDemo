@@ -1,6 +1,6 @@
 from dot_to_frame_parser import DotToFrameParser
 from dot_to_trajectory_parser import DotToTrajectoryParser
-from frame import Frame
+from frame import Frame, MARGIN_HEIGHT, MARGIN_WIDTH, TEXT_HEIGHT, CELL_WIDTH, CELL_HEIGHT
 import time
 import os
 from scenic_script_generator import ScenicScriptGenerator
@@ -12,11 +12,16 @@ def parse_scenario(gen):
     traj_parser = DotToTrajectoryParser(f'{solution_folder}/designSpace.dot')
     
     url_parser_map : dict[str, tuple[DotToFrameParser, Frame]] = dict()
+    pre_frame_parser = DotToFrameParser(f'{solution_folder}/{traj_parser.solutions[0][0][0]}')
+    lane_length, lane_num = len(pre_frame_parser.cells[0]), len(pre_frame_parser.cells)
     
     import pygame
     pygame.init()
+    
+    screen_width = MARGIN_WIDTH * 2 + lane_length * CELL_WIDTH
+    screen_height = MARGIN_HEIGHT * 2 + TEXT_HEIGHT + lane_num * CELL_HEIGHT
 
-    screen = pygame.display.set_mode((1500, 500))
+    screen = pygame.display.set_mode((screen_width, screen_height))
     pygame.display.set_caption('Traffic Situations Demo')
     
     frames : list[list[Frame]] = []

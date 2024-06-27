@@ -9,9 +9,18 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREY = (130, 130, 130)
 ORANGE = (199, 80, 0)
+DARK_GREY = (99, 99, 99)
 
-MARGIN_WIDTH : float = 0
-MARGIN_HEIGHT : float = 20
+MARGIN_WIDTH : float = 2
+MARGIN_HEIGHT : float = 50
+
+CELL_WIDTH = 74.8
+CELL_HEIGHT = 48.888
+
+CAR_WIDTH = CELL_WIDTH / 1
+CAR_HEIGHT = CELL_HEIGHT / 1.1
+
+TEXT_HEIGHT : float = 30    
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
 
@@ -19,21 +28,18 @@ class CellFrame:
     road_image = pygame.image.load(f'{current_directory}/../assets/images/road.png')
     road_line_image = pygame.image.load(f'{current_directory}/../assets/images/road_line.png')
     
-    def __init__(self, parser : DotToFrameParser, cell : Node, cell_pos : tuple[float, float], cell_size : tuple[float, float], abs_pos : tuple[int, int]) -> None:
+    def __init__(self, parser : DotToFrameParser, cell : Node, cell_pos : tuple[float, float], abs_pos : tuple[int, int]) -> None:
         self.parser = parser
         self.cell = cell
         self.pos = cell_pos
         self.abs_pos = abs_pos
         self.is_intermediate = parser.is_intermediate(self.cell)
+        self.size = (CELL_WIDTH, CELL_HEIGHT)     
         
-        image_size = (cell_size[0] + 1, cell_size[1] + 1)
+        image_size = (self.size[0] + 1, self.size[1] + 1)
         self.road_image = pygame.transform.scale(self.road_image, image_size)
         self.road_line_image = pygame.transform.scale(self.road_line_image, image_size)
         
-        if self.is_intermediate:
-            self.size = (cell_size[0], cell_size[1])
-        else:
-            self.size = (cell_size[0], cell_size[1])       
         
     def draw(self, screen : Surface):
         margined_pos = (MARGIN_WIDTH + self.pos[0], MARGIN_HEIGHT + self.pos[1])
@@ -48,11 +54,11 @@ class CarFrame:
     ego_image = pygame.image.load(f'{current_directory}/../assets/images/ego.png')
     car_image = pygame.image.load(f'{current_directory}/../assets/images/car.png')
     
-    def __init__(self, parser : DotToFrameParser, car : Node, cell_frame : CellFrame, car_size : tuple[float, float]) -> None:
+    def __init__(self, parser : DotToFrameParser, car : Node, cell_frame : CellFrame) -> None:
         self.parser = parser
         self.car = car
         self.cell_frame = cell_frame
-        self.size = car_size
+        self.size = (CAR_WIDTH, CAR_HEIGHT)     
         self.is_ego = self.car in self.parser.ego_cars
         self.is_forward = parser.is_forward(self.car)
         self.color = DotToFrameParser.get_car_color(self.car)
@@ -80,17 +86,11 @@ class CarFrame:
         return (MARGIN_WIDTH + self.cell_frame.pos[0] + self.cell_frame.size[0] / 2 - size[0] / 2,
                 MARGIN_HEIGHT + self.cell_frame.pos[1] + self.cell_frame.size[1] / 2 - size[1] / 2)
 
-class Frame():  
-    text_height = 20    
-    
+class Frame():     
     def __init__(self, file : str, parser: DotToFrameParser, screen : Surface, weight) -> None:
         self.weight = weight
         self.file = file
-        screen_height = screen.get_height() - MARGIN_HEIGHT * 2 - self.text_height
-        screen_width = screen.get_width()- MARGIN_WIDTH * 2
-        
-        cell_size = (screen_width / len(parser.cells[0]), screen_height / len(parser.cells))        
-        car_size = (cell_size[0] / 1, cell_size[1] / 1.1)        
+        screen_height = len(parser.cells) * CELL_HEIGHT
         
         screen.fill(GREY) 
         
@@ -100,17 +100,21 @@ class Frame():
         cell_pos = (0.0, 0.0)
         for y, row in enumerate(parser.cells):
             for x, cell in enumerate(row):
-                cell_frame = CellFrame(parser, cell, cell_pos, cell_size, (y, x))
+                cell_frame = CellFrame(parser, cell, cell_pos, (y, x))
                 cell_pos = (cell_frame.pos[0] + cell_frame.size[0], cell_pos[1])
                 cell_frame.draw(screen)                
                 if cell in parser.car_cells:
-                    car_frames.add(CarFrame(parser, parser.car_cells[cell], cell_frame, car_size))
+                    car_frames.add(CarFrame(parser, parser.car_cells[cell], cell_frame))
             cell_pos = (0.0, cell_frame.pos[1] + cell_frame.size[1])
         self.road_length = len(parser.cells[0])
             
-        pygame.draw.line(screen, ORANGE, (0, MARGIN_HEIGHT), (screen.get_width(), MARGIN_HEIGHT), 7)  
-        pygame.draw.line(screen, ORANGE, (0, screen_height + MARGIN_HEIGHT),
-                         (screen.get_width(), screen_height + MARGIN_HEIGHT), 7)
+        pygame.draw.line(screen, WHITE, (0, MARGIN_HEIGHT - 15), (screen.get_width(), MARGIN_HEIGHT -15), 20)  
+        pygame.draw.line(screen, DARK_GREY, (0, MARGIN_HEIGHT), (screen.get_width(), MARGIN_HEIGHT), 10)
+        
+        pygame.draw.line(screen, WHITE, (0, screen_height + MARGIN_HEIGHT + 15),
+                         (screen.get_width(), screen_height + MARGIN_HEIGHT + 15), 20)
+        pygame.draw.line(screen, DARK_GREY, (0, screen_height + MARGIN_HEIGHT),
+                         (screen.get_width(), screen_height + MARGIN_HEIGHT), 10)
                     
         for car_frame in car_frames:
             car_frame.draw(screen)
@@ -123,7 +127,7 @@ class Frame():
         print('______________________________________________')
         for state in self.state_tokens:
             print(f'{state}')
-        text_rect = pygame.Rect(0, screen.get_height() - self.text_height, screen.get_width(), self.text_height)
+        text_rect = pygame.Rect(0, screen.get_height() - TEXT_HEIGHT, screen.get_width(), TEXT_HEIGHT)
         self.screenshot.fill(BLACK, text_rect)
         status = f' frame : {frame_id + 1}/{frame_num},   objective value: {self.weight:.3f},   solution : {sol_id + 1}/{sol_num},   file: {self.file}'
         self.draw_text(status, WHITE, self.screenshot, text_rect)
