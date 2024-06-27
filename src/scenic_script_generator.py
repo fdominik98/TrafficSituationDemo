@@ -2,6 +2,7 @@ from frame import CarFrame
 from pygraphviz import Node
 from graph_utils import hex_to_rgb
 import os
+from maps import map_town_06
 
 class ScenicScriptGenerator():
     current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -33,41 +34,14 @@ class ScenicScriptGenerator():
         "road = network.elements['road40']",
         'terminated = False'
     ]
-        
-    lane5=((128.5, -235.9), (599, -236),
-        (128.5, -239.25), (599, -239.4)) 
-    
-    intermediate_lane54=((128.5, -239.25), (599, -239.4),
-                         (128.5, -239.38), (599, -239.54))
 
-    lane4=((128.5, -239.38), (599, -239.54),
-            (128.5, -242.75), (599, -242.9)) 
-    
-    intermediate_lane43=((128.5, -242.75), (599, -242.9),
-                         (128.5, -242.9), (599, -243))
-
-    lane3=((128.5, -242.9), (599, -243),
-            (128.5, -246.25), (599, -246.4)) 
-    
-    intermediate_lane32=((128.5, -246.25), (599, -246.4),
-                         (128.5, -246.4), (599, -246.55))
-
-    lane2=((128.5, -246.4), (599, -246.55),
-            (128.5, -249.75), (599, -249.9))
-    
-    intermediate_lane21=((128.5, -249.75), (599, -249.9),
-                         (128.5, -249.9), (599, -250)) 
-
-    lane1=((128.5, -249.9), (599, -250),
-            (128.5, -253.25), (599, -253.4)) 
+    lanes = map_town_06 
     
     lanelet_length = 7
     offset = lanelet_length * 2
     SPEED = 10
     checkpoint_dist = 3
     
-    lanes = [lane5, intermediate_lane54, lane4, intermediate_lane43, lane3, intermediate_lane32, lane2, intermediate_lane21, lane1]
-       
     def lanelet_left_width(self, lane):
         return lane[0][1] - lane[2][1]
     

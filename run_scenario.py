@@ -7,7 +7,7 @@ from manage_carla import run_carla, terminate_carla, get_files_in_folder
 terminate_carla()
 run_carla()
 
-scripts = 1
+scripts = 0
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
 scenic_script_dir = f'{current_directory}/assets/scenic/carla'
@@ -28,7 +28,7 @@ simulator = CarlaSimulator(carla_map = scenario.params['carla_map'],
 
 if scripts != -1:
     scenic_scripts = [scenic_scripts[scripts]]
-for i in range(5):
+for i in range(10):
     for file_path, file in scenic_scripts:
         scenario = scenic.scenarioFromFile(file_path)
         scene, _ = scenario.generate()
