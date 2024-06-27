@@ -41,7 +41,7 @@ class ScenicScriptGenerator():
     lanelet_length = 10
     offset = lanelet_length * 2
     SPEED = 10
-    checkpoint_dist = 2
+    checkpoint_dist = 3
     
     def lanelet_left_width(self, lane):
         return lane[0][1] - lane[2][1]
@@ -156,14 +156,20 @@ class ScenicScriptGenerator():
 
             if time_step > prev_time_step:
                 self.car_behaviors[car].append(f'\ttake SetBrakeAction({1 - 1/magnitude})')
-            is_oppositeTraffic = car_frame.is_forward != self.lane_dirs[car_frame.cell_frame.abs_pos[0]]
-            if car_frame.cell_frame.is_intermediate:  
-                is_oppositeTraffic = prev_car_frame.is_forward != self.lane_dirs[prev_car_frame.cell_frame.abs_pos[0]]
-                left = 'True' if car_frame.cell_frame.abs_pos[0] > prev_car_frame.cell_frame.abs_pos[0] else 'False'
-                self.car_behaviors[car].append(f'\tdo PartialLaneChangeBehavior({left}, is_oppositeTraffic={is_oppositeTraffic}, target_speed={target_speed}) until (distance from self to {coord_func(coords)}) < {self.checkpoint_dist}')
+            if car_frame.cell_frame.is_intermediate:
+                left = car_frame.cell_frame.abs_pos[0] > prev_car_frame.cell_frame.abs_pos[0]
+                if left:
+                    target_coords = self.point_to_coordinates((car_frame.cell_frame.abs_pos[0] + 1, car_frame.cell_frame.abs_pos[1]))
+                    is_opposite_traffic = car_frame.is_forward != self.lane_dirs[car_frame.cell_frame.abs_pos[0] + 1]
+                else:
+                    target_coords = self.point_to_coordinates((car_frame.cell_frame.abs_pos[0] -1, car_frame.cell_frame.abs_pos[1]))
+                    is_opposite_traffic = car_frame.is_forward != self.lane_dirs[car_frame.cell_frame.abs_pos[0] - 1]
+                self.car_behaviors[car].append(f'\ttarget_lane=road.laneAt({coord_func(target_coords)})')
+                self.car_behaviors[car].append(f'\tdo PartialLaneChangeBehavior({left}, target_lane, is_oppositeTraffic={is_opposite_traffic}, target_speed={target_speed}) until (distance from self to {coord_func(coords)}) < {self.checkpoint_dist}')
             else:
+                is_opposite_traffic = car_frame.is_forward != self.lane_dirs[car_frame.cell_frame.abs_pos[0]]
                 self.car_behaviors[car].append(f'\ttarget_lane=road.laneAt({coord_func(coords)})')
-                self.car_behaviors[car].append(f'\tdo FollowLaneBehavior(is_oppositeTraffic={is_oppositeTraffic}, target_speed={target_speed}, laneToFollow=target_lane) until (distance from self to {coord_func(coords)}) < {self.checkpoint_dist}')
+                self.car_behaviors[car].append(f'\tdo FollowLaneBehavior(is_oppositeTraffic={is_opposite_traffic}, target_speed={target_speed}, laneToFollow=target_lane) until (distance from self to {coord_func(coords)}) < {self.checkpoint_dist}')
             if car_frame.is_ego:
                 self.car_behaviors[car].append(f"\tprint('ego reached checkpoint ' + str({i+1})+'/'+ str({num_frames}))")
                 self.car_behaviors[car].append(f"\tprint('ego speed: ' + str(self.speed))")
