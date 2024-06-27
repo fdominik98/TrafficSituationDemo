@@ -6,23 +6,23 @@ from scenic.domains.driving.roads import ManeuverType
 def concatenateCenterlines(centerlines=[]):
     return PolylineRegion.unionAll(centerlines)
 
-behavior PartialLaneChangeBehavior(target_point, is_oppositeTraffic=False, target_speed=10):
+behavior PartialLaneChangeBehavior(left, is_oppositeTraffic=False, target_speed=10):
     current_lane = self.lane
     
     if not is_oppositeTraffic:
-        if self.position[1] < target_point[1]:
+        if left:
             traj_centerline = [current_lane.leftEdge]
             traj_endpoint = current_lane.leftEdge[-1]
         else:
             traj_centerline = [current_lane.rightEdge]
             traj_endpoint = current_lane.rightEdge[-1]
     else:
-        if self.position[1] < target_point[1]:
-            traj_centerline = [current_lane.leftEdge]
-            traj_endpoint = current_lane.leftEdge[0]
-        else:
+        if left:
             traj_centerline = [current_lane.rightEdge]
             traj_endpoint = current_lane.rightEdge[0]
+        else:
+            traj_centerline = [current_lane.leftEdge]
+            traj_endpoint = current_lane.leftEdge[0]
 
 
     brakeIntensity = 1.0

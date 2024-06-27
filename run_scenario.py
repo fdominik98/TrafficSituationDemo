@@ -7,7 +7,7 @@ from manage_carla import run_carla, terminate_carla, get_files_in_folder
 terminate_carla()
 run_carla()
 
-scripts = 0
+scripts = 1
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
 scenic_script_dir = f'{current_directory}/assets/scenic/carla'
