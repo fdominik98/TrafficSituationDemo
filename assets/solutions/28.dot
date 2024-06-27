@@ -349,22 +349,22 @@ edge [
 	color=black
 	fontcolor=black
 	label="ContainingLane"]
-63 -> 50 [
+63 -> 54 [
 	style=solid
 	color=black
 	fontcolor=black
 	label="OnCell"]
-64 -> 14 [
+64 -> 16 [
 	style=solid
 	color=black
 	fontcolor=black
 	label="OnCell"]
-65 -> 7 [
+65 -> 9 [
 	style=solid
 	color=black
 	fontcolor=black
 	label="OnCell"]
-66 -> 53 [
+66 -> 47 [
 	style=solid
 	color=black
 	fontcolor=black
@@ -840,20 +840,20 @@ edge [
 		</TABLE>>
 ]
 relation_63_64_66 [
-	fillcolor="#a7df8f"
+	fillcolor="#cbb3f0"
 	label=<<TABLE CELLSPACING="0" BORDER="2" CELLBORDER="0" CELLPADDING="4" STYLE="ROUNDED">
 		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">relation_63_64_66</TD></TR>
-		<TR><TD><FONT COLOR="black">MonitorState: EgoIsSwitchingToOwnLane[ego, car1, car2]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock BehindCarClock=5, Clock AtOppositeLaneClock=14, Clock AcceptClock=0}</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">MonitorState: EgoIsInFrontOfCar[ego, car1, car2]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock AtOppositeLaneClock=6, Clock AcceptClock=0, Clock BehindCarClock=3}</FONT></TD></TR>
 		</TABLE>>
 ]
 variables [
 	fillcolor="#cab9ba"
 	label=<<TABLE CELLSPACING="0" BORDER="2" CELLBORDER="0" CELLPADDING="4" STYLE="ROUNDED">
 		<TR><TD COLSPAN="3" BORDER="2" SIDES="B">variables</TD></TR>
-		<TR><TD><FONT COLOR="black">MonitorState: StartState[]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock AcceptClock=0, Clock BehindCarClock=0, Clock AtOppositeLaneClock=0}</FONT></TD></TR>
 		<TR><TD><FONT COLOR="black">NEXT_ID</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">67</FONT></TD></TR>
-		<TR><TD><FONT COLOR="black">Clock</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">17</FONT></TD></TR>
-		<TR><TD><FONT COLOR="black">Fitness</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">0.015384615384615385</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">Clock</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">8</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">MonitorState: StartState[]</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">{Clock BehindCarClock=0, Clock AtOppositeLaneClock=0, Clock AcceptClock=0}</FONT></TD></TR>
+		<TR><TD><FONT COLOR="black">Fitness</FONT></TD><TD><FONT COLOR="black">=</FONT></TD><TD><FONT COLOR="black">0.058823529411764705</FONT></TD></TR>
 		</TABLE>>
 ]
 }
