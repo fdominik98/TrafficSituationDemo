@@ -41,7 +41,7 @@ class ScenicScriptGenerator():
     lanelet_length = 10
     offset = lanelet_length * 2
     SPEED = 10
-    checkpoint_dist = 3
+    checkpoint_dist = 2
     
     def lanelet_left_width(self, lane):
         return lane[0][1] - lane[2][1]
