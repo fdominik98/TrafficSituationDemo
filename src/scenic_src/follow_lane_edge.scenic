@@ -7,21 +7,37 @@ def concatenateCenterlines(centerlines=[]):
     return PolylineRegion.unionAll(centerlines)
 
 behavior PartialLaneChangeBehavior(left, target_lane, is_oppositeTraffic=False, target_speed=10):
-    current_lane = target_lane
+    #current_lane = target_lane
+    # if not is_oppositeTraffic:
+    #     if left:
+    #         traj_centerline = [current_lane.rightEdge]
+    #         traj_endpoint = current_lane.rightEdge[-1]
+    #     else:
+    #         traj_centerline = [current_lane.leftEdge]
+    #         traj_endpoint = current_lane.leftEdge[-1]
+    # else:
+    #     if left:
+    #         traj_centerline = [current_lane.leftEdge]
+    #         traj_endpoint = current_lane.leftEdge[0]
+    #     else:
+    #         traj_centerline = [current_lane.rightEdge]
+    #         traj_endpoint = current_lane.rightEdge[0]
+
+    current_lane = self.lane
     if not is_oppositeTraffic:
         if left:
-            traj_centerline = [current_lane.rightEdge]
-            traj_endpoint = current_lane.rightEdge[-1]
-        else:
             traj_centerline = [current_lane.leftEdge]
             traj_endpoint = current_lane.leftEdge[-1]
-    else:
-        if left:
-            traj_centerline = [current_lane.leftEdge]
-            traj_endpoint = current_lane.leftEdge[0]
         else:
             traj_centerline = [current_lane.rightEdge]
+            traj_endpoint = current_lane.rightEdge[-1]
+    else:
+        if left:
+            traj_centerline = [current_lane.rightEdge]
             traj_endpoint = current_lane.rightEdge[0]
+        else:
+            traj_centerline = [current_lane.leftEdge]
+            traj_endpoint = current_lane.leftEdge[0]
 
 
     brakeIntensity = 1.0
